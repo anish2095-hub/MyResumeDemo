@@ -3,10 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <meta name="description" content="About Anish Kumar - Journey, vision, and background in Web Development and Computer Science Engineering.">
+    <title>About Me | Anish Kumar</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #0ea5e9;
+            --dark: #0f172a;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-600: #475569;
+            --gray-500: #64748b;
+            --gray-200: #e2e8f0;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--gray-700);
+            line-height: 1.7;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .header-title p {
+            color: #93c5fd;
+            font-size: 1rem;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(-3px);
+        }
+
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 i {
+            color: var(--primary);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin-bottom: 12px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        .value-item {
+            background: var(--white);
+            padding: 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+        }
+
+        .value-item h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .value-item h3 i {
+            color: var(--accent);
+        }
+
+        .value-item p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .header, .content, .footer {
+                padding: 24px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Heloo this is about my resume</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, minima distinctio officiis architecto voluptas odit deleniti voluptatum porro velit praesentium qui vel omnis eos explicabo dolores, unde nobis aliquid nulla consequatur sunt ratione! Aliquam accusantium, ratione dolorum ipsa molestiae quasi beatae aperiam ducimus exercitationem dolorem pariatur! Tenetur deleniti, dolorum natus ducimus eius suscipit ab, fuga iure earum placeat magni nemo minima officiis sapiente voluptatibus, neque vel sint culpa veniam aperiam autem. Dolore tempore numquam qui est porro delectus deleniti nam maiores necessitatibus dolores, voluptates, accusamus sequi quisquam aperiam cum. A ea tempore alias rem rerum animi ut impedit? Corporis adipisci incidunt molestiae, autem animi possimus ducimus esse, nobis in magnam repellat perferendis veniam, facere qui tempora ad libero! Fuga praesentium voluptate obcaecati inventore iure odio perspiciatis, repellat voluptatum, quo laborum provident omnis, ratione vel iste quidem explicabo sapiente ipsam! Praesentium omnis aspernatur rem, repudiandae eos dolores esse commodi quo voluptatum natus fuga, vero distinctio unde impedit adipisci, qui beatae doloremque maxime facilis incidunt? Explicabo necessitatibus incidunt perspiciatis recusandae! Exercitationem molestiae eum fuga id earum officiis voluptatibus, ipsum repellat, quis adipisci illo dolorem harum voluptas minus deserunt explicabo optio sint. Iure ratione doloribus ex consequuntur reprehenderit? Culpa quae provident, voluptatibus tempore, nisi reprehenderit nemo quod quia est maxime recusandae beatae. Dicta minima eveniet quis iste atque ducimus exercitationem natus soluta provident hic necessitatibus laborum, distinctio quibusdam laudantium facere officiis quam tenetur at in, fugit ratione dolorum ad iure illo! Voluptate optio ab delectus recusandae harum velit aspernatur dolores, facilis dolorum officia eaque voluptatem. Praesentium illo molestias velit consequatur voluptas ratione, provident sunt perferendis. Dolorum quae autem cum est maxime hic iste, deserunt nemo ipsum facere. Quod temporibus rerum minus in optio numquam itaque labore iure. Sed quam cum nesciunt deserunt assumenda repudiandae quod repellendus sit, dicta iure, rem corrupti explicabo recusandae perferendis officia ipsam. Accusamus architecto voluptatem voluptate aliquid alias est ipsa, fugit, velit sed cupiditate eveniet, necessitatibus ipsum quidem totam iste vel voluptas? Deleniti exercitationem unde ea. Ab reprehenderit sit expedita at sunt porro, adipisci libero ducimus illum, dolor molestias esse? Sint numquam similique alias. Consequatur ducimus illum eum ab maxime. Aspernatur pariatur eum dolorum itaque odio quam ex, nesciunt saepe accusamus minima tempora blanditiis ab molestiae et harum sed quisquam ipsa. Iste placeat minima deleniti mollitia quisquam, molestiae, sunt atque quae dignissimos assumenda ab quod expedita quasi adipisci quas voluptatem quidem sint error maiores similique quibusdam inventore perferendis. Cumque, suscipit vero sed totam, dolorum sint ducimus dicta qui incidunt asperiores ex ad ipsum ab eaque eum aliquam laudantium? Deserunt distinctio hic non! Ut, vel. Repudiandae corporis, aliquid nihil reiciendis possimus neque. Beatae, illo quas? Tempore nostrum ratione libero, eaque itaque aspernatur totam expedita molestiae nesciunt fuga illo. Animi quam, voluptas, nobis voluptatibus itaque voluptatum enim architecto sint ea cumque rerum earum vitae dolorem tempora accusantium incidunt hic similique ab eveniet vero vel. Commodi impedit quidem in, dignissimos dolorem, exercitationem minus reprehenderit autem laudantium minima nesciunt libero molestias. Ea dolore distinctio tempora pariatur culpa doloribus at eligendi rerum autem veniam.</p>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-title">
+                <h1>About Anish Kumar</h1>
+                <p><i class="fa-solid fa-code"></i> Developer Story & Aspirations</p>
+            </div>
+            <a href="index.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Resume
+            </a>
+        </header>
+
+        <!-- Content -->
+        <main class="content">
+            <section class="card">
+                <h2><i class="fa-solid fa-compass"></i> My Journey</h2>
+                <p>
+                    Hello! I am <strong>Anish Kumar</strong>, a tech enthusiast and web developer currently pursuing my Diploma in Computer Science & Engineering at <strong>Government Polytechnic Gaya, Bihar</strong> (2025–2028). Prior to this, I completed my schooling at Saraswati Vidya Mandir, Sitamarhi with 84% in CBSE boards.
+                </p>
+                <p>
+                    My passion for software and web development started with curiosity about how the web works and quickly grew into building practical web applications. Whether it's coding procedural logic in Python or architecting responsive user interfaces with HTML, CSS, and modern JavaScript, I love turning concepts into tangible interactive software.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2><i class="fa-solid fa-lightbulb"></i> Philosophy & Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h3><i class="fa-solid fa-seedling"></i> Continuous Learning</h3>
+                        <p>Constantly picking up new technologies, best practices, and algorithmic thinking every single day.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fa-solid fa-check-double"></i> Clean Code</h3>
+                        <p>Focusing on readable, maintainable, and standards-compliant code with clear documentation.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3><i class="fa-solid fa-handshake"></i> Team Collaboration</h3>
+                        <p>Believing that great software is created by active listening, curiosity, and productive teamwork.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2><i class="fa-solid fa-bullseye"></i> Vision & Goals</h2>
+                <p>
+                    My goal is to evolve into a versatile Full-Stack Engineer and Software Developer capable of building high-impact web services, scalable backend systems, and modern AI-enhanced tools. I am continuously working on open-source projects on GitHub and eager to contribute to collaborative developer teams.
+                </p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>&copy; 2026 Anish Kumar. All rights reserved.</span>
+            <a href="index.html"><i class="fa-solid fa-file-invoice"></i> View Full Resume</a>
+        </footer>
+    </div>
+
 </body>
 </html>
